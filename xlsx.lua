@@ -231,7 +231,19 @@ function M.Workbook(filename)
     self.sharedStrings = {}
     if sharedStringsXml then
         for _, str in ipairs(sharedStringsXml.sst[1]['#'].si) do
-            self.sharedStrings[#self.sharedStrings + 1] = str['#'].t[1]['#']
+            if str['#'].r then
+                local concatenatedString = {}
+                for _, rstr in ipairs(str['#'].r) do
+					local t = rstr['#'].t[1]['#']
+					if type(t) == 'string' then
+						concatenatedString[#concatenatedString + 1] = rstr['#'].t[1]['#']
+					end
+                end
+                concatenatedString = table.concat(concatenatedString)
+                self.sharedStrings[#self.sharedStrings + 1] = concatenatedString
+            else
+                self.sharedStrings[#self.sharedStrings + 1] = str['#'].t[1]['#']
+            end
         end
     end
 
