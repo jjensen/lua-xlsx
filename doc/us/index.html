@@ -191,6 +191,7 @@
 
 <ul>
     <li><code>cell.UNDEFINED</code></li>
+    <li><code>cell.BOOLEAN</code></li>
     <li><code>cell.INT</code></li>
     <li><code>cell.DOUBLE</code></li>
     <li><code>cell.STRING</code></li>
@@ -209,7 +210,13 @@
 
 <h3>cellContent = cell:Get()</h3>
 
-<p>If the type of the cell is <code>cell.INT</code> or <code>cell.DOUBLE</code>, the integer or double content of the cell is returned as a Lua number.  If the type of the cell is <code>cell.STRING</code>, the ANSI string content of the cell is returned as a Lua string.  If the type of the cell is <code>cell.WSTRING</code>, the Unicode string content of the cell are returned as an <code>xls.wchar</code>.  Otherwise, <code>nil</code> is returned.</p>
+<p>If the type of the cell is <code>cell.BOOLEAN</code>, the boolean content of the cell is returned as a Lua boolean.  If the type of the cell is <code>cell.INT</code> or <code>cell.DOUBLE</code>, the integer or double content of the cell is returned as a Lua number.  If the type of the cell is <code>cell.STRING</code>, the ANSI string content of the cell is returned as a Lua string.  If the type of the cell is <code>cell.WSTRING</code>, the Unicode string content of the cell are returned as an <code>xls.wchar</code>.  Otherwise, <code>nil</code> is returned.</p>
+
+
+
+<h3>cellContent = cell:GetBoolean()</h3>
+
+<p>If the type of the cell is <code>cell.BOOLEAN</code>, the boolean content of the cell is returned as a Lua boolean.  Otherwise, <code>nil</code> is returned.</p>
 
 
 

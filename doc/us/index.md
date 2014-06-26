@@ -132,6 +132,7 @@ Returns the cell if the operation succeeded, `nil` if either the row or column a
 Returns one of the following as the type of this Excel cell.
 
 * `cell.UNDEFINED`
+* `cell.BOOLEAN`
 * `cell.INT`
 * `cell.DOUBLE`
 * `cell.STRING`
@@ -149,7 +150,13 @@ Returns the raw value of the cell.
 
 ### cellContent = cell:Get()
 
-If the type of the cell is `cell.INT` or `cell.DOUBLE`, the integer or double content of the cell is returned as a Lua number.  If the type of the cell is `cell.STRING`, the ANSI string content of the cell is returned as a Lua string.  If the type of the cell is `cell.WSTRING`, the Unicode string content of the cell are returned as an `xls.wchar`.  Otherwise, `nil` is returned.
+If the type of the cell is `cell.BOOLEAN`, the boolean content of the cell is returned as a Lua boolean.  If the type of the cell is `cell.INT` or `cell.DOUBLE`, the integer or double content of the cell is returned as a Lua number.  If the type of the cell is `cell.STRING`, the ANSI string content of the cell is returned as a Lua string.  If the type of the cell is `cell.WSTRING`, the Unicode string content of the cell are returned as an `xls.wchar`.  Otherwise, `nil` is returned.
+
+
+
+### cellContent = cell:GetBoolean()
+
+If the type of the cell is `cell.BOOLEAN`, the boolean content of the cell is returned as a Lua boolean.  Otherwise, `nil` is returned.
 
 
 
