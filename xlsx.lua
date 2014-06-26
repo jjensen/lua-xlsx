@@ -238,10 +238,10 @@ function M.Workbook(filename)
             if str['#'].r then
                 local concatenatedString = {}
                 for _, rstr in ipairs(str['#'].r) do
-					local t = rstr['#'].t[1]['#']
-					if type(t) == 'string' then
-						concatenatedString[#concatenatedString + 1] = rstr['#'].t[1]['#']
-					end
+                    local t = rstr['#'].t[1]['#']
+                    if type(t) == 'string' then
+                        concatenatedString[#concatenatedString + 1] = rstr['#'].t[1]['#']
+                    end
                 end
                 concatenatedString = table.concat(concatenatedString)
                 self.sharedStrings[#self.sharedStrings + 1] = concatenatedString
